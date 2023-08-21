@@ -1,0 +1,25 @@
+.mat-spinner::ng-deep circle {
+  stroke: #fff;
+}
+
+.loading {
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  right: 0;
+  background-image: linear-gradient(
+    to bottom,
+    #006191,
+    #11628c,
+    #1f6386,
+    #296480,
+    #33647b
+  );
+  opacity: 0.9;
+}

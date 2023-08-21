@@ -1,0 +1,27 @@
+<div class="contacts">
+  <div class="list">
+    <div class="item" *ngFor="let contact of contactList">
+      <div class="data">
+        <h2>
+          {{ contact.fullName | titlecase }}
+        </h2>
+        <h3 [matMenuTriggerFor]="menu" >(+57) {{ contact.phone }}</h3>
+      </div>
+      <div class="buttons">
+        <button mat-icon-button *ngFor="let item of buttonList" (click)="buttonsOptions(item.icon,contact)">
+          <mat-icon>{{ item.icon }}</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="no-data" *ngIf="contactList.length===0 && !loading">
+      <h2>No hay datos</h2>
+    </div>
+  </div>
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Llamada telefónica</button>
+  <button mat-menu-item>Mensaje de texto</button>
+  <button mat-menu-item>Llamada por WhatssApp</button>
+  <button mat-menu-item>Mensaje por WhatssApp</button>
+</mat-menu>

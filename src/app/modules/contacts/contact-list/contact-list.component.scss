@@ -1,0 +1,46 @@
+.mat-spinner::ng-deep circle {
+  stroke: #006191;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .list {
+    background-color: #f6f6f6;
+    width: 90%;
+    border-radius: 20px;
+    .item {
+      margin: 15px;
+      display: flex;
+      justify-content: space-between;
+      .data {
+        h2 {
+          font-weight: bold;
+          margin: 0;
+        }
+        h3 {
+          color: #006191;
+        }
+      }
+      .buttons {
+        color: #006191;
+        display: flex;
+        align-items: center;
+      }
+    }
+    .no-data {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        font-weight: bold;
+        color: #006191;
+      }
+    }
+  }
+
+  .loading-spinner {
+    margin: 5em;
+  }
+}
