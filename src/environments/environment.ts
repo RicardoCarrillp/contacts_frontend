@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  urlApi : "http://localhost:4000/api/",//NODE
-  //urlApi : "http://localhost:8080/",//JAVA
+  //urlApi : "http://localhost:3000/api/",//NODE
+  //urlApi : "https://contacts-backend-ochre.vercel.app/api/",//NODE
+  urlApi : "https://backendkrujava-production.up.railway.app/",//JAVA
   production: false
 };
 

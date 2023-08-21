@@ -6,7 +6,7 @@ import { Result } from 'src/app/models/result.model';
 import { AlertService } from 'src/app/services/alert.service';
 import { ContactsService } from 'src/app/services/contacts.service';
 import { LoadingService } from 'src/app/services/loading.service';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DeleteModalComponent } from 'src/app/shared/modals/delete-modal/delete-modal.component';
 import { Contacts } from 'src/app/models/contact.model';
 import { SearchService } from 'src/app/services/search.service';
@@ -66,29 +66,29 @@ export class ContactListComponent implements OnInit,OnDestroy {
           this.contactList = []
 
           //*JAVA*//
-          // contacts.forEach((element:any) => {
-          //   element.fullName = element.name + ' ' + element.lastName
-          //   this.contactList.push(element)
-          // });
-          //
-          //   this.searchService.saveArray(this.contactList);
-          //   this.cleanInputSearch.emit();
-          //   this.loadingService.setLoading(false);
-
-          //*NODE*//
-          if (contacts.status === 200) {
-            contacts.data.forEach(element => {
-              element.fullName = element.name + ' ' + element.lastName
-              this.contactList.push(element)
-            });
+          contacts.forEach((element:any) => {
+            element.fullName = element.name + ' ' + element.lastName
+            this.contactList.push(element)
+          });
 
             this.searchService.saveArray(this.contactList);
             this.cleanInputSearch.emit();
             this.loadingService.setLoading(false);
 
-          } else {
-            this.loadingService.setLoading(false);
-          }
+          //*NODE*//
+          // if (contacts.status === 200) {
+          //   contacts.data.forEach(element => {
+          //     element.fullName = element.name + ' ' + element.lastName
+          //     this.contactList.push(element)
+          //   });
+          //
+          //   this.searchService.saveArray(this.contactList);
+          //   this.cleanInputSearch.emit();
+          //   this.loadingService.setLoading(false);
+          //
+          // } else {
+          //   this.loadingService.setLoading(false);
+          // }
         },
         error: (err) => {
           console.log(err)
