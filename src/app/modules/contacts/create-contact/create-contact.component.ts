@@ -34,6 +34,7 @@ export class CreateContactComponent implements OnInit {
     this.loadingService.setLoading(true);
 
     const stringDate = this.dateToString();
+
     const contact: Contacts = {
       name: this.contactForm.value.name,
       lastName: this.contactForm.value.lastName,
@@ -44,6 +45,7 @@ export class CreateContactComponent implements OnInit {
       typeContact: this.contactForm.value.typeContact,
       origin: this.contactForm.value.origin,
     }
+
     this.contactsService.createContacts(contact).subscribe({
       next: () => {
         this.loadingService.setLoading(false);

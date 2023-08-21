@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { Contacts } from 'src/app/models/contact.model';
 import { AlertService } from 'src/app/services/alert.service';
 import { ContactsService } from 'src/app/services/contacts.service';
@@ -19,7 +19,7 @@ export class DeleteModalComponent implements OnInit {
 
 
   deleteContact() {
-    this.contactsService.deleteContacts(this.data.id!).subscribe({
+    this.contactsService.deleteContacts(this.data._id!).subscribe({
       next: () => {
         this.dialogRef.close();
         this.emitFunction();

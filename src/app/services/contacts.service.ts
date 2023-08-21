@@ -18,6 +18,6 @@ export class ContactsService {
     return this.http.post<Result>(`${environment.urlApi}contacts`, contact);
   }
   deleteContacts(id: string): Observable<Result> {
-    return this.http.get<Result>(`${environment.urlApi}contacts/delete/${id}`);
+    return this.http.delete<Result>(`${environment.urlApi}contacts/${id}`);
   }
 }

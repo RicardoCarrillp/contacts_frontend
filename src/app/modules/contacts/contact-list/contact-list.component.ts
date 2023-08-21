@@ -64,7 +64,6 @@ export class ContactListComponent implements OnInit,OnDestroy {
       .pipe(takeUntil(this.unsubscribe$)).subscribe({
         next: (contacts: Result) => {
           this.contactList = []
-
           //*JAVA*//
           contacts.forEach((element:any) => {
             element.fullName = element.name + ' ' + element.lastName
